@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>施工實績｜豐鑫冷凍空調工程公司</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<!-- 圖片前後對比滑桿 -->
+<script src="../js/img-comparison-slider.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+
+<!-- 展開 -->
+<script>
+  function setupExpandButtons() {
+   document.querySelectorAll('.btn-more').forEach(btn => {
+
+    btn.addEventListener('click', function() {
+
+      const card = this.closest('.project-card');
+      const content = card.querySelector('.project-content');
+
+      // 先把其他卡片收合
+      document.querySelectorAll('.project-card').forEach(c => {
+        if (c !== card) {
+          c.classList.remove('expanded-card');
+          c.querySelector('.project-content').classList.remove('expanded');
+          c.querySelector('.btn-more').textContent = '看更多';
+        }
+      });
+
+      // 切換目前卡片
+      if (card.classList.contains('expanded-card')) {
+        card.classList.remove('expanded-card');
+        content.classList.remove('expanded');
+        this.textContent = '看更多';
+      } else {
+        card.classList.add('expanded-card');
+        content.classList.add('expanded');
+        this.textContent = '收合';
+      }
+
+    });
+   });
+  }
+
+  document.addEventListener('DOMContentLoaded', setupExpandButtons);
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const elements = document.querySelectorAll(".fade-up, .fade-img");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  elements.forEach(el => observer.observe(el));
+
+});
+</script>
+
+</head>
+<body>
+
+<header class="site-header">
+  <img src="./../images/LOGO.png"width="5%">
+  <h1>豐鑫冷凍空調工程公司</h1>
+  <nav>
+    <a href="./../index.html">首頁</a>
+    <a href="./../about.html">關於我們</a>
+    <a href="./../projects.html" class="active">施工實績</a>
+    <a href="./../contact.html">聯絡我們</a>
+  </nav>
+</header>
+
+<main class="content">
+
+  <h2 class="fade-up">🏦 114年工程實績</h2>
+  <p class="hint fade-up">（請拖動照片滑桿查看施工前後對比）</p>
+
+  <!-- 工程項目 1 -->
+   <div class="project-grid">
+
+     <!-- 卡片 1 -->
+     <div class="project-card fade-up">
+      
+      <div class="card-body">
+        <h3 class="fade-up">114 年｜嘉義市立北興國中</h3>
+        <span class="location">📍 嘉義市</span>
+      </div>
+        
+      <p class="fade-up">
+        ✓更換冰水主機、豪華型空調箱等工項<br>
+        ✓場勘丈量現場後以3D 1:1規劃管路走向，以及事前預製，現場即可組裝，減少影響校方活動安排<br>
+        ✓將機房管路重新規劃，從易造成行走困難的地板上改至空中，並回饋增設水量平衡閥，減少耗電<br>
+      </p>
+
+      <div class="project-content">
+        <div class="work-item">
+          <h4 class="fade-up">✔️ 冰水主機汰換工程</h4>
+          <div class="fade-img">
+            <img-comparison-slider>
+              <img slot="first" src="../images/1140001_北興-1.jpg">
+              <img slot="second" src="../images/1140001_北興-2.jpg">
+            </img-comparison-slider>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <h4 class="fade-up">✔️ 水塔汰換工程</h4>
+          <div class="fade-img">
+            <img-comparison-slider>
+              <img slot="first" src="../images/1140002_北興-1.jpg">
+              <img slot="second" src="../images/1140002_北興-2.jpg">
+            </img-comparison-slider>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <button class="btn btn-more">看更多</button>
+      </div>
+     </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  © 2026 豐鑫冷凍空調工程公司  Designed By 豐鑫冷凍空調工程公司
+</footer>
+
+</body>
+</html>
