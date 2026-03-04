@@ -22,3 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+const topbar = document.getElementById("topbar");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 80) {
+    topbar.classList.add("shrink");
+  } else {
+    topbar.classList.remove("shrink");
+  }
+});

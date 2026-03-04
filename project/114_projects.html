@@ -6,79 +6,36 @@
 
 <link rel="stylesheet" href="../css/style.css">
 
-<!-- 圖片前後對比滑桿 -->
+
 <script src="../js/img-comparison-slider.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
-
-<!-- 展開 -->
-<script>
-  function setupExpandButtons() {
-   document.querySelectorAll('.btn-more').forEach(btn => {
-
-    btn.addEventListener('click', function() {
-
-      const card = this.closest('.project-card');
-      const content = card.querySelector('.project-content');
-
-      // 先把其他卡片收合
-      document.querySelectorAll('.project-card').forEach(c => {
-        if (c !== card) {
-          c.classList.remove('expanded-card');
-          c.querySelector('.project-content').classList.remove('expanded');
-          c.querySelector('.btn-more').textContent = '看更多';
-        }
-      });
-
-      // 切換目前卡片
-      if (card.classList.contains('expanded-card')) {
-        card.classList.remove('expanded-card');
-        content.classList.remove('expanded');
-        this.textContent = '看更多';
-      } else {
-        card.classList.add('expanded-card');
-        content.classList.add('expanded');
-        this.textContent = '收合';
-      }
-
-    });
-   });
-  }
-
-  document.addEventListener('DOMContentLoaded', setupExpandButtons);
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-
-  const elements = document.querySelectorAll(".fade-up, .fade-img");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
-
-  elements.forEach(el => observer.observe(el));
-
-});
-</script>
-
+<script src="../js/main.js"></script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <img src="./../images/LOGO.png"width="5%">
-  <h1>豐鑫冷凍空調工程公司</h1>
-  <nav>
-    <a href="./../index.html">首頁</a>
-    <a href="./../about.html">關於我們</a>
-    <a href="./../projects.html" class="active">施工實績</a>
-    <a href="./../contact.html">聯絡我們</a>
-  </nav>
+<header class="topbar" id="topbar">
+
+  <div class="header-inner">
+
+    <a href="index.html" class="brand">
+      <img src="./../images/LOGO.png" class="logo-img">
+      <span class="company-name">豐鑫冷凍空調工程公司</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="./../index.html">首頁</a>
+      <a href="./../about.html">關於我們</a>
+      <a href="./../projects.html" class="active">施工實績</a>
+      <a href="./../contact.html">聯絡我們</a>
+    </nav>
+
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
 </header>
 
 <main class="content">
