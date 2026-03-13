@@ -22,11 +22,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(224, 238, 255, 0.75),
-    rgba(18, 77, 165, 0.85)
-  );
+  background: linear-gradient(135deg,#0f5a91,#1a75b8);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,0.15);
   transition: all 0.3s ease;
@@ -302,12 +298,82 @@ img-comparison-slider {
 }
 
 /* Footer */
-.footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #eee;
-  color: #555;
-  margin-top: 60px;
+.footer{
+  margin-top:80px;
+}
+
+/* 上層藍色區 */
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  max-width:1200px;   /* 限制最大寬度 */
+  margin:auto;        /* 置中 */
+
+  padding:35px 40px;  /* 原本60 → 40 */
+  background:#0f5a91;
+  color:white;
+  position:relative;
+
+    background: linear-gradient(135deg,#0f5a91,#1b6da6);
+}
+
+/* 左側 */
+.footer-left{
+  width:45%;
+}
+
+.footer-logo{
+  width:80px;
+  margin-bottom:20px;
+}
+
+/* 右側 */
+.footer-right{
+
+  width:50%;              /* 只佔一半 */
+
+  background:#176dad;
+  padding:35px 50px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  /* 斜角 */
+  clip-path: polygon(12% 0,100% 0,100% 100%,0 100%);
+}
+
+/* 選單 */
+.footer-menu{
+  display:flex;
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.footer-menu a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.footer-menu a:hover{
+  opacity:0.6;
+}
+
+/* 聯絡資訊 */
+.footer-contact{
+  display:flex;
+  gap:60px;
+  margin-top:10px;
+}
+/* 底部 */
+.footer-bottom{
+  background:#eee;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
 }
 
 /* =====================
@@ -587,6 +653,16 @@ img-comparison-slider {
   margin-left: 6px;
   font-size: 12px;
 }
+
+.footer-top{
+  flex-direction:column;
+}
+
+.footer-right{
+  clip-path:none;
+  margin-top:40px;
+}
+
 }
 
 /* 自動慢速滾動 */
